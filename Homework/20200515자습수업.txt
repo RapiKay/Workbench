@@ -1,0 +1,168 @@
+값이 최대 9개 들어갈 수 있고, 제일 앞의 자리에서부터 2로 시작해 마지막 자리에는 9로 끝나는 int형의 배열 wa를 만드시오.
+
+( 배열안에 값이 1개 들어갈 때마다 '증가' 가 출력되고, 맨 마지막에는 배열의 마지막 값이 출력되도록 하시오 )
+
+#include <stdio.h>
+
+main()
+{
+    int i, j, wa[8];
+    for(i=2; i<11; i++){
+        for(j=0; j<10; j++){
+            wa[j] = 1 + j;
+        }
+        printf("증가\n");
+    }
+    printf("%d", wa[8]);
+}
+
+
+다음 소스에서 에러가 발생하는 원인을 2개 찾으시오
+
+#include <stdio.h>
+
+void main()
+{
+    int num, i, cnt=0;
+
+    printf("\n 전달받은 숫자가 소수인지 아닌지 알려주는 프로그람입네다.");
+    printf("\n\n 숫자를 입력하시라요 : ");
+    scanf("%d", num);
+
+    printf("\n %d의 약수 : \t", num);
+    for(i=1; i<=num; i=i+1){
+        if((num % i) == 0){
+            cnt = cnt + 1;
+            printf("%d\t", i);
+        }
+    }
+    printf("\n\n %d의 약수는 %d개 입네다.", num, cnt);
+    if(cnt == 2){
+        printf("\n %d은(는) 소수입네다.\n", num);
+    }
+    else if{
+        printf("\n %d은(는) 소수가 아닙네다.", num);
+        printf("\n 만약 서류에 소수라 잘못 적었다믄 기다림 하시라요. 아오지 안내 봉사원이 도착할겁네다.");
+    }
+}
+
+1. scanf문에서 num 앞에 &를 작성하지 않았다.
+
+2. if문 조건 이외에 나머지는 else를 적거나 else if문을 사용하고 나머지 모든 조건을 넣어야하지만, 이 소스에서는 else if문을 사용하였으나 조건을 넣지 않았다.
+
+다음 소스를 보고 문제에 답하시오
+
+#include <stdio.h>
+
+void main()
+{
+    int inputBinary, outputDecimal = 0, weight = 1;
+    printf("\n 2진수를 10진수로 변환 \n\n");
+    printf("2진수 입력 : ");
+    scanf("\n %d", &inputBinary);
+
+    while(inputBinary > 0){
+        if(inputBinary % 10 != 0){
+            outputDecimal = outputDecimal + weight;
+        }
+        inputBinary = inputBinary / 10;
+        weight = weight * 2;
+    }
+    printf("\n 입력하신 2진수는 \n 10진수로 %d입니다.", outputDecimal);
+}
+
+1. scanf로 값을 받는 변수의 이름은 무엇인가?
+	> intputBinary
+
+2. while문에 작성된 조건은 무엇인가?
+	> intputBinary 가 0보다 클 때
+
+3. inputBinary를 10으로 나눴을 때 나머지가 10이 아닐때의 결과는?
+	> outputBinary의 값이 outputBinary + weight가 된다.
+
+4. while문이 한 번 돌 때마다 정의되는 변수 2가지의 이름과, 어떻게 정의 되는지 쓰시오
+	> inputBinary, 10으로 나눈 몫이 된다.
+	> weight, 기존 값의 2배가 된다.
+
+다음 조건을 만족하는 소스를 작성하시오
+
+시작할 때 '입력' 이라는 출력문구가 출력되게 하시오.
+
+50 이하의 값을 입력 받으면 '50이하'가 출력되도록 하시오.
+
+50초과의 값이 입력되면, 입력받은 값에 2를 더한 숫자가 출력되게 하시오.
+
+int형 변수만 사용하시오.
+
+#include <stdio.h>
+
+main()
+{
+    int input;
+    printf("입력\n");
+    scanf("%d", &input);
+
+    if( input <= 50){
+        printf("50이하");
+    }
+    else{
+        int i = input + 2;
+        printf("%d", i);
+    }
+}
+
+다음 조건을 만족하는 소스를 작성하시오.
+
+시작할 때 '생일을 출력하는 프로그램' 이라는 출력문구가 출력되게 하시오.
+다음, ' 월 입력' 이라는 출력문구가 출력되게 하시오.
+
+1~12 까지의 값만 받고, 나머지 값이 입력되었을 때에는 '지구인이 아닙니다' 라는 출력문구가 출력됨과 동시에 프로그램을 종료하시오.
+
+다음, '일 입력' 이라는 출력문구가 출력되게 하시오.
+
+1~31 까지의 값만 받고, 나머지 값이 입력되었을 때에는 ' 아니 그건 좀 ' 이라는 출력문구가 출력됨과 동시에 프로그램을 종료하시오.
+
+( 1~12월 까지 모두 31일 까지 있음을 가정함 )
+
+위의 모든 조건을 만족하였다면, '당신의 생일은 (월 값) 월, (일 값) 일 입니다.'라는 출력문구가 출력되게 하시오.
+
+만약 생일이 8월 16일 이라면, ' 쌤 제 생일이에요 ' 라는 출력문구가 출력되게 하시오.
+
+#include <stdio.h>
+
+main()
+{
+    int Monthinput, Dayinput;
+    printf("생일을 입력하는 프로그램\n");
+    printf("월 입력\n");
+    scanf("%d", &Monthinput);
+    if( Monthinput > 12 ){
+        printf("지구인이 아닙니다.");
+        return 0;
+    }
+    if( Monthinput < 1){
+        printf("지구인이 아닙니다.");
+        return 0;
+    }
+    printf("\n일 입력\n");
+    scanf("%d", &Dayinput);
+    if( Dayinput > 31){
+        printf(" 아니 그건 좀 ");
+        return 0;
+    }
+    if( Dayinput < 1){
+        printf(" 아니 그건 좀 ");
+        return 0;
+    }
+
+    if( Monthinput == 8){
+        if( Dayinput == 16){
+            printf("\n 쌤 제 생일이에요");
+            return 0;
+        }
+    }
+    printf("\n\n\n\n\n\n\n\n\n당신의 생일은 %d월, %d일 입니다.", Monthinput, Dayinput);
+}
+
+
+

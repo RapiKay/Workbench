@@ -1,0 +1,39 @@
+ 연산자란?
+
+계산을 할 떄 가장 기본적으로 필요한 것
+
++ 더하기
+- 빼기
+* 곱하기
+/ 나누기
+% 모듈러 연산. 나머지를 반환하는 연산식
+
+연산자는 하나의 기호 체계.
+
+1 + 2 에서
+1 2 피연산자
++ 연산자
+====================================
+#include <stdio.h>
+#define SECOND_PER_MINUTE 60			( SECOND_PER_MINUTE가 60임을 정의 )
+
+int main(void)
+{
+	int input = 1000;				( int형의 input는 1000임을 선언 )
+	int minute = input / SECOND_PER_MINUTE;	( int형의 minute는 input 값을 SECOND_PER_MINUTE 로 나눈 몫임을 선언 )
+	int second = input % SECOND_PER_MINUTE;	( int형의 second는 input 값을 SECOND_PER_MINUTE 로 나눈 나머지임을 선언 )
+	printf("%d초 %d분 %d초 입니다.\n", input, minute, second);	( 1000초 16분 40초 입니다. 를 출력 )
+	return 0;
+}
+=====================================
+#include <stdio.h>
+
+int main(void)
+{
+	int x = 0;					( int형의 x는 0임을 선언 )
+	printf("현재의 x는 %d입니다.\n", x);		( 현재의 x는 0입니다. 를 프린트, 줄 바꿈
+	x++;					( x에 1을 더함 )
+	printf("현재의 x는 %d입니다.\n", x);		( 현재의 x는 1입니다. 를 프린트, 줄 바꿈 )
+	printf("현재의 x는 %d입니다.\n", x--);		( 현재의 x는 1입니다. 를 프린트, x에 1을 뻄. 즉, 출력할 떄에의 x는 1 이었지만, 출력 이후 x뒤에 --를 적음으로써 x는 전보다 1 작은 값을 가지게 됨 )
+	return 0;
+}
