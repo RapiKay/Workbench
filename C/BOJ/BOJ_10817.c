@@ -1,42 +1,30 @@
 #include <stdio.h>
 
-int main()
+main(){
+
+int num1, num2, num3;
+
+scanf("%d %d %d", &num1, &num2, &num3);
+
+if(num1 > num2) {
+    if(num1 > num3) {
+        if(num2 > num3) 
+            printf("%d", num2);
+
+        else printf("%d", num3);
+                }
+    else printf("%d", num1);
+            }
+
+else
 {
-    int a,b,c,n,m,i;
-    scanf("%d %d %d", &a, &b, &c);
+if(num2 > num3) {
+    if(num1 > num3) 
+        printf("%d", num1);
 
-    int d[2];
+    else printf("%d", num3);
+            }
 
-    d[0] = a;
-    d[1] = b;
-    d[2] = c;
-    
-    int max = d[0];
-
-    for (i = 0; i<= 2; i++) {
-        if (d[i] > max) {
-            max = d[i];
-            break;
-        }
+else printf("%d", num2);
     }
-
-    n = i;
-
-    int min = d[0];
-
-    for(i = 0; i<= 2; i++){
-        if (d[i] < min) {
-            min = d[i];
-            break;
-        }
-    }
-
-    m = i;
-
-    printf("%d | max | %d\n", d[n],n);
-    printf("%d | min | %d", d[m],m);
-
-
-
-    return 0;
 }
