@@ -5,43 +5,132 @@
     <meta charset="utf-8">
     <style>
         #top{
-            padding-left: 60px;
-            padding-top:10px;
-            padding-bottom: 10px;
-            font-style:italic;
-            grid-template-columns: 150px 1fr;
-            display:grid;
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+        }
+        #mid{
+            display: grid;
+            grid-template-columns: 3fr;
         }
         body{
             margin:0px;
         }
-        #top ol{
+        #top .mid{
+            display: grid;
             font-style: normal;
             margin:0px;
             padding:0px;
             margin-top:8px;
             font-size: 18px;
             text-align: center;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            padding-top:10px;
         }
         h1{
             margin:0px;
+            padding-left: 60px;
+            padding-top:10px;
+            padding-bottom: 10px;
+            font-style:italic;
+            display:grid;
         }
-        div{
-
+        #mid .top{
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 30px;
+            color:gray;
+            margin-left: 65px;
+        }
+        #mid .mid{
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 10px;
+            margin-left: 65px;
+        }
+        #mid .bot{
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-left: 65px;
+            color:gray;
+            text-decoration: none;
+        }
+        p{
+            margin:0px;
         }
     </style>
 </head>
 <body>
     <div id="top">
         <h1>KAKAO</h1>
-        <ol>
-            <ul>
-                <div>
-                    카카오 투자정보 서비스 소셜임팩트 고객지원 인재영입
-                </div>
-            </ul>
-        </ol>
+        <div class="mid">
+            <div>
+                <b>카카오</b>
+            </div>
+            <div>
+                <b>투자정보</b>
+            </div>
+            <div>
+                <b>서비스</b>
+            </div>
+            <div>
+                <b>소셜임팩트</b>
+            </div>
+            <div>
+                <b>고객지원</b>
+            </div>
+            <div>
+                <b>인재영입</b>
+            </div>
+        </div>
     </div>
-    <img src="https://t1.kakaocdn.net/kakaocorp/pw/kakao/introduce_vision01.jpg">
+<img src="https://t1.kakaocdn.net/kakaocorp/pw/kakao/introduce_vision01.jpg"
+width="100%">
+    <div id="mid">
+        <div class="top">
+            <div>
+                <b>Panic! at the Disco</b>
+            </div>
+            <div>
+                <b>Sam smith</b>
+            </div>
+            <div>
+                <b>Charlie puth</b>
+            </div>
+        </div>
+        <div class="mid">
+            <h3>개인정보</h3>
+            <h2>자기소개</h2>
+            <h3>기타 특징</h3>
+        </div>
+        <div class="bot">
+            <p>
+                Discord:Rapi_Kay#3168<br>
+                Github:https://github.com/RapiKay/Workbench<br>
+                LOL:RapiKay<br>
+                Steam:Irina_Kay<br>
+                Phone:01040809611<br>
+                Email:0816aszx@gmail.com
+            </p>
+            <p>
+                수원정보과학고등학교 IT소프트웨어 1학년 1반<br> 
+                오승원입니다.<br>
+                어렸을 떄부터 '근본'에 대해 엄하게 배웠으며<br>
+                현재는 인생의 근본을 찾아 공부하고 있습니다.<br>
+                '맛'에 대해 상당한 관심이 있습니다.<br>
+                무언가를 보는 것 만이 아닌, 직접 해보고도픈<br>
+                망상이 많습니다.<br>
+                생일은 8월 16일로 광복절 다음이라 친구들이<br>
+                잘 기억해주지만, 친구가 없습니다.<br>
+            </p>
+            <p>
+                키 : 173cm<br>
+                몸무게 : 68kg<br>
+                나이: 17세(만 15세)<br>
+                친구 : 찐따임<br>
+                고향 : 경기도 용인시 수지구 풍덕천동<br>
+                거주지 : 경기도 용인시 수지구 풍덕천동<br>
+                짝사랑 기간 : 11년
+            </p>
+        </div>
 </body>
 </html>
