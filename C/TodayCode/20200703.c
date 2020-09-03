@@ -31,9 +31,7 @@ int gcd(int a,int b)
         return a;
     }
     else{
-        // printf("\ngcd else{} started.");
-        // return 0;
-        return gcd(b, a%b); // 이곳에서 버그 발생. 수정필요
+        return gcd(b, a%b);
     }
 }
 

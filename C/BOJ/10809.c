@@ -1,22 +1,37 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-    int i,j;
-    char num[101] = { NULL };
-    int tmp[26] = {0, };
-    scanf("%s", num);
-
-    for(i=0;i<=25;i++){
-        for(j=0;j<100;j++){
-            if(num[i]==i){
-                tmp[i-97] = j+1;
-                break;
-            }
-        }
-    }
-    for(i=0;i<26;i++){
-            printf("%d\n",tmp[i]-1);
-        }
-    return 0;
+	char s[100];
+	int alphabet[26];  
+	int i = 0,j;
+	for (j = 0; j < 26; j++)
+	{
+		alphabet[j] = -1; 
+	}
+	scanf("%s", s); 
+	while (s[i] != 0)   
+	{
+		for (j = 0; j <= i; j++)
+		{
+			if (j == i)
+			{
+				int d = s[i] - 97;
+				alphabet[d] = i;    
+			}
+			else if (s[i] == s[j])
+			{
+				break;
+			}
+		}
+		i++;
+	}
+	for (j = 0; j < 26; j++)
+	{
+		if (j == 25)
+			printf("%d", alphabet[j]);
+		else
+			printf("%d ", alphabet[j]);
+	}
+	return 0;
 }

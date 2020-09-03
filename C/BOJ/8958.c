@@ -11,13 +11,46 @@ main()
 
 	// O = 79
 	// X = 88
-    char arr[]={0, };
-    int input,cnt,i,sum,j;
+
+    // char arr[100] = {NULL};
+    int i,input,j,result,tmp;
+    int cnt = 0;
+    int stack = 1;
 
     scanf("%d",&input);
+//    printf("\n test case input complete! starting \"for\"\n");
     for(i=1;i<=input;i++){
+        char arr[100] = {NULL};
+//        printf("* | ");
+        scanf("%s",&arr);
+        j = 0;
+        while(1){
+            if(arr[j] == NULL){
+                tmp = j;
+//                    printf("\nj complete\n");
+                break;
+            }
+            else{
+//                printf("=");
+                j++;
+                continue;
+            }
+        }
+        while(1){
+            if(arr[cnt] == 'O'){
+                result = result + stack;
+                stack++;
+            }
+            else{
+                stack = 1;
+            }
+            cnt++;
+            if(cnt == tmp)
+                break;
+        }   
+        printf("%d\n",result);
+        result = 0; 
+        stack = 1;
         cnt = 0;
-        sum = 0;
-        for(j=1;j<=)
     }
 }

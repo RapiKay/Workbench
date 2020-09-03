@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <math.h>
 
 int saw_develop;
 
@@ -23,11 +24,10 @@ void main()
     return 0;
 }
 
-void list(int input)        //2 입력시 여기서 끝냄
+void list(int input)    
 {
     if(input == 1){
         printf("\nA");
-        return 0;
     }
     if(input == 2){
         printf("프로그램을 종료합니다.");
@@ -68,5 +68,8 @@ void sel_cal()
 {
     printf("=======================================\n\n");
     printf("할 계산의 종류를 선택하세요\n\n");
-    return 0;
+    printf("1. 간단한 연산\n");
+    printf("2. 공배수,공약수\n");
+    printf("3. 넓이 구하기");
+    printf("4. 부피 구하기");
 }
