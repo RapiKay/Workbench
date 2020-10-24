@@ -53,23 +53,57 @@ void developer()
     printf("End: ???\n");
     printf("개발자 연락처 : 0816aszx@gmail.com\n");
     printf("Discord : Rapi_'Kay#3168\n");
-    printf("돌아가기 : 1\n");
+    printf("돌아가기 : 아무 키나 입력\n");
     printf("=======================================\n");
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     scanf("%d",&back_or_etc_input);
-    if(back_or_etc_input == 1){
-        saw_develop++;
-        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        main();
-    }
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    
+	main();
 }
 
 void sel_cal()
 {
+    int sel_cal_input;
+
     printf("=======================================\n\n");
     printf("할 계산의 종류를 선택하세요\n\n");
     printf("1. 간단한 연산\n");
     printf("2. 공배수,공약수\n");
     printf("3. 넓이 구하기");
     printf("4. 부피 구하기");
+
+    scanf("%d",&sel_cal_input);
+
+    if(sel_cal_input != 1 || sel_cal_input != 2 || sel_cal_input != 3 || sel_cal_input != 4){
+        printf("선택지의 숫자를 입력하세요.");
+        sel_cal();
+    }
+
+    if(sel_cal_input == 1){
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        simple_cal();
+    }
+
+    if(sel_cal_input == 2){}
+
+    if(sel_cal_input == 3){}
+
+    if(sel_cal_input == 4){}
+}
+
+void simple_cal()
+{
+    printf("=======================================\n\n");
+    printf("할 계산의 종류를 선택하세요\n\n");
+    printf("1. 제곱근\n");
+    printf("2. 제곱수\n");
+    printf("3. 부피 구하기\n");
+    printf("dev..");
+    end();
+}
+
+void end()
+{
+    return 0;
 }
