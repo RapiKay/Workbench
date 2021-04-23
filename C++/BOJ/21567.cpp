@@ -19,6 +19,6 @@ int main()
     }
 
     for(i=0;i<=9;i++){
-        cout << point[i] << endl;
+        cout << cnt[i] << endl;
     }
 }
