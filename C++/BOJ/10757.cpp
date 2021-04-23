@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -31,7 +32,7 @@ int main()
     }
     
     if (carry) cout << 1;
-    for(int i = 0; i <= max(inp1.length(), inp2.length()); ++i) {
+    for(int i = 0; i < max(inp1.length(), inp2.length()); ++i) {
         cout << sum[max(inp1.length(), inp2.length())-i];
     }
 
