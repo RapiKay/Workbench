@@ -11,12 +11,12 @@ int main()
     cin >> inp1 >> inp2;
 
     int i;
-    for(i = 0; i < inp1.length(); i++){
+    for(i = 0; i < inp1.length(); ++i){
         char tmp = inp1.at(i);
         a[inp1.length() - i] = atoi(&tmp);
     }
 
-    for(i = 0; i < inp2.length(); i++){
+    for(i = 0; i < inp2.length(); ++i){
         char tmp = inp2.at(i);
         b[inp2.length() - i] = atoi(&tmp);
     }
