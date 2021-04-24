@@ -1,36 +1,52 @@
-//10757_큰 수 A+B
-#include <iostream>
-#include <algorithm>
-#include <string>
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<string>
 using namespace std;
 
-int a[10004], b[10004], sum[10004], carry;
-string str1, str2;
+int N, sum;
+int num1[10001], num2[10001];
+string s1, s2, tmp;
+vector<int> ans;
 
-int main() {
-	cin >> str1 >> str2;		//입력 받음
+int main()
+{
+	cin >> s1 >> s2;
 
-	for (int i = 0; i < str1.length(); ++i) {		//배열에 저장
-		char tmp = str1.at(i);
-		a[str1.length() - i] = atoi(&tmp);
+	// 더 긴 수를 s1으로 저장하기
+	if (s1.size() < s2.size())
+	{
+		tmp = s1;
+		s1 = s2;
+		s2 = tmp;
 	}
-	for (int i = 0; i < str2.length(); ++i) {		//배열에 저장
-		char tmp = str2.at(i);
-		b[str2.length() - i] = atoi(&tmp);
-	}
-	for (int i = 1; i <= max(str1.length(), str2.length()); ++i) {	//한 자리씩 계산
-		sum[i] = a[i] + b[i] + carry;			//a 숫자와 b 숫자와 carry 더함
-		if (sum[i] >= 10) {						//10이 넘었다면 앞으로 올려줘야 함
-			sum[i] -= 10;						
-			carry = 1;
+	
+	// num1, num2 배열을 만드는 과정
+	for (int i = 0; i < s1.size(); i++)
+		num1[i + 1] = s1[i] - '0';
+
+	for (int i = 0; i < s2.size(); i++)
+		num2[i + 1 + (s1.size()-s2.size())] = s2[i] - '0';
+
+	// num배열들의 끝부분부터 덧셈을 하면서 ans벡터에 값 저장
+	for (int i = s1.size(); i > 0; i--)
+	{
+		sum = num1[i] + num2[i];
+		if (sum >= 10)
+		{
+			num1[i - 1]++;
+			sum -= 10;
 		}
-		else carry = 0;
+		ans.push_back(sum);
 	}
 
-	if (carry) cout << 1;						//마지막까지 계산했는데 carry가 있다면 출력
-	for (int i = 0; i < max(str1.length(), str2.length()); ++i) {		//sum에 계산한 거 역순으로 출력
-		cout << sum[max(str1.length(), str2.length())-i];
+	// 맨 앞자리수 출력
+	if (num1[0] != 0) cout << 1;
+
+	// ans벡터 거꾸로 출력
+	for (int i = ans.size() - 1; i >= 0; i--)
+	{
+		cout << ans[i];
 	}
 
-	return 0;
 }
